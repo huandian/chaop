@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			font-family: "PingFang SC";
+			user-select:none;
+		}
+
+		div{
+			width:30px;
+			height: 30px;
+			color: grey;
+			margin: 200px auto;
+			font-size: 20px;
+			cursor: pointer;
+			position: relative;
+		}
+
+		div.active{
+			color: red;
+		}
+
+		div.active:before{
+			content: "❤";
+			font-size: 30px;
+			position: absolute;
+			left: -5px;
+			top: -40px;
+			animation:ani 1s linear forwards;
+			color: red;
+		}
+
+		@keyframes ani{
+			25%{
+				transform: translate(0,-25px) rotate(10deg) scale(1.2);
+				opacity: 0.75;
+			}
+
+			50%{
+				transform: translate(0,-50px) rotate(-10deg) scale(1.4);
+				opacity: 0.5;
+			}
+
+			75%{
+				transform: translate(0,-75px) rotate(10deg) scale(1.6);
+				opacity: 0.25;
+			}
+
+			100%{
+				transform: translate(0,-100px) rotate(0deg) scale(1.8);
+				opacity: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div>❤</div>
+	<script>
+		var oHeart = document.querySelector('div');
+
+		oHeart.onclick = function(){
+			oHeart.classList.toggle('active');
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
